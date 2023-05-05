@@ -131,3 +131,8 @@ button.nav {
 	color: #4592B4;
 	cursor: pointer;
 }
+
+button.nav:disabled {
+	cursor: not-allowed;
+	opacity: .5;
+}
