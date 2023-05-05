@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	let questionIndex;
 
 	// DOM elements
+	const $questionIndex = document.getElementById('index');
 	const $questionText = document.getElementById('question');
 
 	const $buttonPrev = document.getElementById('button-prev');
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	function ShowQuestionOfIndex(index) {
 		const question = questions[index];
 		$questionText.innerText = question.text;
+		$questionIndex.innerText = `${index + 1} / ${questions.length}`;
 
 		$buttonPrev.disabled = index == 0;
 		const reachedEnd = index == questions.length - 1;

@@ -71,6 +71,14 @@ body>main>.container {
 	position: relative;
 }
 
+#index {
+	margin: 0;
+
+	font-weight: bold;
+	text-align: center;
+	color: #008698;
+}
+
 #question {
 	margin-top: 168rem;
 	margin-bottom: 109rem;
