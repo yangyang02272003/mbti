@@ -7,22 +7,22 @@
 	</head>
 	<body>
 		<header>
-			顶部栏
+			<!-- 顶部栏 -->
 		</header>
 		<main>
 			<main class="question container">
 				<main>
 					<p id="question">题干</p>
-					<ol>
-						<li class="option-container"><label>
-							<input type="radio" name="option" class="option" />
+					<div id="option-container">
+						<input type="radio" name="option" id="option-A" />
+						<label for="option-A" class="option">
 							<span class="option-text">选项1</span>
-						</label></li>
-						<li class="option-container"><label>
-							<input type="radio" name="option" class="option" />
+						</label>
+						<input type="radio" name="option" id="option-B" />
+						<label for="option-B" class="option">
 							<span class="option-text">选项2</span>
-						</label></li>
-					</ol>
+						</label>
+					</div>
 				</main>
 				<nav>
 					<button id="button-prev" class="nav">上一题</button>
