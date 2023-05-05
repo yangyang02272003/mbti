@@ -10,12 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		const question = questions[index];
 		$questionText.innerText = question.text;
 
-		if(index == 0) {
-			$buttonPrev.disabled = true;
-		}
-		else {
-			$buttonPrev.disabled = false;
-		}
+		$buttonPrev.disabled = index == 0;
 	}
 
 	window.ShowPrev = function ShowPrev() {
@@ -28,12 +23,17 @@ document.addEventListener('DOMContentLoaded', function() {
 		ShowQuestionOfIndex(questionIndex);
 	};
 
+	function SelectWithIndex(index) {
+		const question = questions[questionIndex];
+		question.chosen = question.options[index];
+	}
+
 	window.SelectA = function SelectA() {
-		// TODO
+		SelectWithIndex(0);
 	};
 
 	window.SelectB = function SelectB() {
-		// TODO
+		SelectWithIndex(1);
 	};
 
 	questionIndex = 0;
