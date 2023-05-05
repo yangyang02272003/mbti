@@ -10,6 +10,12 @@ html {
 	user-select: none;
 
 	font-size: calc((.5 * 100vw / 1920 + .5 * 100vh / 1080) * .8);
+
+	--theme-color: #449FBC;
+}
+
+.hidden {
+	display: none !important;
 }
 
 body {
@@ -143,4 +149,39 @@ button.nav {
 button.nav:disabled {
 	cursor: not-allowed;
 	opacity: .5;
+}
+
+.result.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 51rem;
+}
+
+#result-image {
+	display: block;
+	width: 612rem;
+	height: 348rem;
+
+	background-color: gray;
+	object-fit: cover;
+}
+
+#result {
+	width: 380rem;
+	height: 83rem;
+
+	font-size: 48rem;
+
+	font-weight: bold;
+	color: var(--theme-color);
+	background-color: #FFFFFF99;
+	border-radius: 20rem;
+
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
 }

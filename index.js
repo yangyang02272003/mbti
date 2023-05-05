@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	let questionIndex = 0;
 
 	// DOM elements
+	const $questionContainer = document.querySelector('.question.container');
+	const $resultContainer = document.querySelector('.result.container');
+
 	const $questionIndex = document.getElementById('index');
 	const $questionText = document.getElementById('question');
 
@@ -14,8 +17,14 @@ document.addEventListener('DOMContentLoaded', function() {
 	const $buttonNext = document.getElementById('button-next');
 	const $buttonEnd = document.getElementById('button-end');
 
+	const $resultImage = document.getElementById('result-image');
+	const $result = document.getElementById('result');
+
 	function SetElementExistence(element, existence) {
-		element.style.display = existence ? 'block' : 'none';
+		if(existence)
+			element.classList.remove('hidden');
+		else
+			element.classList.add('hidden');
 	}
 
 	function ShowQuestionOfIndex(index) {
@@ -73,7 +82,10 @@ document.addEventListener('DOMContentLoaded', function() {
 			Compare('T', 'F'),
 			Compare('P', 'J'),
 		];
-		return result.join('');
+		SetElementExistence($questionContainer, false);
+		SetElementExistence($resultContainer, true);
+		$result.innerHTML = result.map(char => `<span>${char}</span>`).join('');
+		// $resultImage.src = xxx;
 	};
 
 	ShowQuestionOfIndex(questionIndex);
