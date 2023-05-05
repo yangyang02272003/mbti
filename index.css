@@ -9,7 +9,7 @@ html {
 	background-color: #86A1FF;
 	user-select: none;
 
-	font-size: calc((.5 * 100vw / 1920 + .5 * 100vh / 1080) * .8);
+	font-size: calc((.5 * 100vw / 1920 + .5 * 100vh / 1080) * 1);
 
 	--theme-color: #449FBC;
 }
@@ -136,6 +136,8 @@ button.nav {
 	display: inline-block;
 	width: 199rem;
 	height: 60rem;
+
+	font-size: 32rem;
 
 	border: none;
 	background-color: #FFFFFF99;

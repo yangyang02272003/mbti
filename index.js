@@ -82,10 +82,18 @@ document.addEventListener('DOMContentLoaded', function() {
 			Compare('T', 'F'),
 			Compare('P', 'J'),
 		];
-		SetElementExistence($questionContainer, false);
-		SetElementExistence($resultContainer, true);
+
+		// 结算
+		$buttonPrev.disabled = $buttonNext.disabled = $buttonEnd.disabled = true;
+		$buttonEnd.innerText = '结算中';
 		$result.innerHTML = result.map(char => `<span>${char}</span>`).join('');
-		// $resultImage.src = xxx;
+		function OnImageLoad() {
+			SetElementExistence($questionContainer, false);
+			SetElementExistence($resultContainer, true);
+		}
+		$resultImage.addEventListener('load', OnImageLoad);
+		$resultImage.addEventListener('error', OnImageLoad);
+		$resultImage.src = `./img/${result.join('')}.jpg`;
 	};
 
 	ShowQuestionOfIndex(questionIndex);
