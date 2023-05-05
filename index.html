@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title></title>
 		<link rel="stylesheet" href="./index.css" />
+		<script src="index.js"></script>
 	</head>
 	<body>
 		<header>
@@ -15,18 +16,18 @@
 					<p id="question">题干</p>
 					<div id="option-container">
 						<input type="radio" name="option" id="option-A" />
-						<label for="option-A" class="option">
+						<label for="option-A" class="option" onclick="SelectA()">
 							<span class="option-text">选项1</span>
 						</label>
 						<input type="radio" name="option" id="option-B" />
-						<label for="option-B" class="option">
+						<label for="option-B" class="option" onclick="SelectB()">
 							<span class="option-text">选项2</span>
 						</label>
 					</div>
 				</main>
 				<nav>
-					<button id="button-prev" class="nav">上一题</button>
-					<button id="button-next" class="nav">下一题</button>
+					<button id="button-prev" class="nav" onclick="ShowPrev()">上一题</button>
+					<button id="button-next" class="nav" onclick="ShowNext()">下一题</button>
 				</nav>
 			</main>
 			<main class="result container" style="display: none;">
