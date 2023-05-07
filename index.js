@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
 	const questions = window['questions'] || {};
-	questions.splice(3);
 	let questionIndex = 0;
 
 	// DOM elements
@@ -32,8 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
 		$questionText.innerText = question.text;
 		$questionIndex.innerText = `${index + 1} / ${questions.length}`;
 
-		$optionA.checked = question.chosen == question.options[0];
-		$optionB.checked = question.chosen == question.options[1];
+		const optionElements = [$optionA, $optionB];
+		for(const [i, option] of question.options.entries()) {
+			const $option = optionElements[i];
+			if(!$option)
+				continue;
+			$option.checked = question.chosen == option;
+			$option.labels[0].innerText = option.text;
+		}
 
 		$buttonPrev.disabled = index == 0;
 		const reachedEnd = index == questions.length - 1;
